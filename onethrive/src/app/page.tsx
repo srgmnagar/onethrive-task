@@ -4,14 +4,11 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { CalendarDays, Users, MapPin, Gift, Phone, Menu } from "lucide-react";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef } from "react";
 import ReviewsSection from "@/components/ReviewSection";
 
 

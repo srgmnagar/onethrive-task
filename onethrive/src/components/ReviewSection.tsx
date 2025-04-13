@@ -106,7 +106,7 @@ const ReviewsSection: React.FC = () => {
   return (
     <div className="start w-[80%] max-w-6xl py-20 mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Candidate Reviews */}
+        {/* Company Reviews */}
         <div
           className="relative p-5 md:p-8 rounded-3xl backdrop-blur-sm"
           style={{
@@ -117,7 +117,7 @@ const ReviewsSection: React.FC = () => {
           }}
         >
           <h2 className="text-3xl font-Exo text-white mb-6 text-center hover:text-[#00ffa3] transition-all ease-in duration-200 hover:translate-x-1">
-            Candidate reviews
+            Company reviews
           </h2>
 
           <div className="flex items-center">
@@ -148,7 +148,7 @@ const ReviewsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Recruiter Reviews */}
+        {/* Employee Reviews */}
         <div
           className="relative p-5 md:p-8 rounded-3xl backdrop-blur-sm flex flex-col"
           style={{
@@ -159,7 +159,7 @@ const ReviewsSection: React.FC = () => {
           }}
         >
           <h2 className="text-3xl font-Exo text-white mb-6 text-center hover:text-[#00ffa3] transition-all ease-in duration-200 hover:translate-x-1">
-            Recruiter reviews
+            Employee reviews
           </h2>
 
           <div className="flex items-center">
