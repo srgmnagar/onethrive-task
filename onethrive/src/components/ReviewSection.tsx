@@ -1,26 +1,7 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import Link from "next/link";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import {
-  CalendarDays,
-  Users,
-  MapPin,
-  Gift,
-  Phone,
-  Menu,
-  ChevronLeft,
-  ChevronRight,
-  Star,
-} from "lucide-react";
+import React, { useState } from "react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 type Review = {
   id: number;
@@ -98,7 +79,9 @@ const ReviewsSection: React.FC = () => {
       .map((_, i) => (
         <Star
           key={i}
-          className={`w-5 h-5 ${i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-400"}`}
+          className={`w-5 h-5 ${
+            i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-400"
+          }`}
         />
       ));
   };
@@ -107,86 +90,70 @@ const ReviewsSection: React.FC = () => {
     <div className="start w-[80%] max-w-6xl py-20 mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Company Reviews */}
-        <div
-          className="relative p-5 md:p-8 rounded-3xl backdrop-blur-sm"
-          style={{
-            background:
-              "radial-gradient(circle at 50% 60%, rgba(0, 255, 163, 0.3) 0%, rgba(10, 16, 37, 0.1) 100%)",
-            boxShadow: "0 8px 32px 0 rgba(0, 255, 163, 0.15)",
-            border: "1px solid rgba(0, 255, 163, 0.1)",
-          }}
-        >
-          <h2 className="text-3xl font-Exo text-white mb-6 text-center hover:text-[#00ffa3] transition-all ease-in duration-200 hover:translate-x-1">
-            Company reviews
-          </h2>
-
-          <div className="flex items-center">
-            <button
-              onClick={prevCandidateReview}
-              className="p-2 text-[#4A9BD4] hover:text-white transition-colors"
-              aria-label="Previous review"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            <div className="flex flex-col justify-between font-Exo">
-              <p className="text-gray-300 mb-4 leading-relaxed">
-                {candidateReviews[currentCandidateReview].text}
-              </p>
-              <div className="flex justify-center mt-4">
-                {renderStars(candidateReviews[currentCandidateReview].rating)}
+        <div className="relative p-5 md:p-8 rounded-3xl bg-[#0a1025] backdrop-blur-sm z-10 overflow-hidden border border-[#00ffa3]/20">
+          <div className="absolute -inset-[1px] bg-gradient-to-tr from-[#00ffa3] via-transparent to-[#00ffa3] opacity-30 blur-xl animate-pulse rounded-3xl z-0" />
+          <div className="relative z-10">
+            <h2 className="text-3xl font-Exo text-white mb-6 text-center hover:text-[#00ffa3] transition-all ease-in duration-200 hover:translate-x-1">
+              Company reviews
+            </h2>
+            <div className="flex items-center">
+              <button
+                onClick={prevCandidateReview}
+                className="p-2 text-[#4A9BD4] hover:text-white transition-colors"
+                aria-label="Previous review"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <div className="flex flex-col justify-between font-Exo">
+                <p className="text-gray-300 mb-4 leading-relaxed">
+                  {candidateReviews[currentCandidateReview].text}
+                </p>
+                <div className="flex justify-center mt-4">
+                  {renderStars(candidateReviews[currentCandidateReview].rating)}
+                </div>
               </div>
+              <button
+                onClick={nextCandidateReview}
+                className="p-2 text-[#4A9BD4] hover:text-white transition-colors"
+                aria-label="Next review"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
             </div>
-
-            <button
-              onClick={nextCandidateReview}
-              className="p-2 text-[#4A9BD4] hover:text-white transition-colors"
-              aria-label="Next review"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
           </div>
         </div>
 
         {/* Employee Reviews */}
-        <div
-          className="relative p-5 md:p-8 rounded-3xl backdrop-blur-sm flex flex-col"
-          style={{
-            background:
-              "radial-gradient(circle at 50% 60%, rgba(0, 255, 163, 0.3) 0%, rgba(10, 16, 37, 0.1) 100%)",
-            boxShadow: "0 8px 32px 0 rgba(0, 255, 163, 0.15)",
-            border: "1px solid rgba(0, 255, 163, 0.1)",
-          }}
-        >
-          <h2 className="text-3xl font-Exo text-white mb-6 text-center hover:text-[#00ffa3] transition-all ease-in duration-200 hover:translate-x-1">
-            Employee reviews
-          </h2>
-
-          <div className="flex items-center">
-            <button
-              onClick={prevRecruiterReview}
-              className="p-2 text-[#a67bd4] hover:text-white transition-colors"
-              aria-label="Previous review"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            <div className="flex-1 min-h-[200px]">
-              <p className="text-gray-300 font-Exo mb-4 leading-relaxed">
-                {recruiterReviews[currentRecruiterReview].text}
-              </p>
-              <div className="flex justify-center mt-4">
-                {renderStars(recruiterReviews[currentRecruiterReview].rating)}
+        <div className="relative p-5 md:p-8 rounded-3xl bg-[#0a1025] backdrop-blur-sm z-10 overflow-hidden border border-[#a67bd4]/20">
+          <div className="absolute -inset-[1px] bg-gradient-to-tr from-[#a67bd4] via-transparent to-[#a67bd4] opacity-30 blur-xl animate-pulse rounded-3xl z-0" />
+          <div className="relative z-10">
+            <h2 className="text-3xl font-Exo text-white mb-6 text-center hover:text-[#a67bd4] transition-all ease-in duration-200 hover:translate-x-1">
+              Employee reviews
+            </h2>
+            <div className="flex items-center">
+              <button
+                onClick={prevRecruiterReview}
+                className="p-2 text-[#a67bd4] hover:text-white transition-colors"
+                aria-label="Previous review"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <div className="flex-1 min-h-[200px]">
+                <p className="text-gray-300 font-Exo mb-4 leading-relaxed">
+                  {recruiterReviews[currentRecruiterReview].text}
+                </p>
+                <div className="flex justify-center mt-4">
+                  {renderStars(recruiterReviews[currentRecruiterReview].rating)}
+                </div>
               </div>
+              <button
+                onClick={nextRecruiterReview}
+                className="p-2 text-[#a67bd4] hover:text-white transition-colors"
+                aria-label="Next review"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
             </div>
-
-            <button
-              onClick={nextRecruiterReview}
-              className="p-2 text-[#a67bd4] hover:text-white transition-colors"
-              aria-label="Next review"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
           </div>
         </div>
       </div>

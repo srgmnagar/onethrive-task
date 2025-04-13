@@ -144,26 +144,29 @@ export default function Home() {
         </div>
       </div>
       <div className=" flex flex-col gap-5">
-  <div
-    style={{ lineHeight: "1.8" }}
-    className="start relative inconsolata w-[85%] sm:w-[80%] sm:px-24 sm:pt-16 px-12 pt-7 mx-auto mt-16 rounded-3xl text-white inter sm:text-2xl text-lg font-extralight border border-[#00ffa3]"
-  >
-    <div>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi unde et doloribus totam fuga obcaecati Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores similique ullam harum ab, saepe itaque quo repudiandae quasi omnis voluptatibus, architecto dolor aliquam iure vitae mollitia numquam totam voluptatem corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio impedit quasi deleniti nulla alias voluptatibus!
-    </div>
-
-    <div className="mt-10 mb-10 relative w-fit mx-auto hover:translate-y-1 transition-all">
-      <div className="absolute inset-0 bg-[#00ffa3] blur-xl opacity-70 rounded-full z-0 w-full h-full" />
-
-      
-      <Link
-        href="/"
-        className="font-Orbitron relative z-10 px-3 sm:px-8 py-2 text-white text-lg sm:text-xl font-normal rounded-full bg-transparent border-none cursor-pointer hover:translate-y-1 transition-all"
-      >
-        Connect with us!
-      </Link>
-    </div>
+      <div
+  style={{
+    lineHeight: "1.8",
+    boxShadow: "0 0 44px 0px #00ffa3", 
+  }}
+  className="start relative inconsolata w-[85%] sm:w-[80%] sm:px-24 sm:pt-16 px-12 pt-7 mx-auto mt-16 rounded-3xl text-white inter sm:text-2xl text-lg font-extralight border border-[#00ffa3] shadow-[0_0_25px_#00ffa3]/40 transition-all duration-300"
+>
+  <div>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi unde et doloribus totam fuga obcaecati Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores similique ullam harum ab, saepe itaque quo repudiandae quasi omnis voluptatibus, architecto dolor aliquam iure vitae mollitia numquam totam voluptatem corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio impedit quasi deleniti nulla alias voluptatibus!
   </div>
+
+  <div className="mt-10 mb-15 relative w-fit mx-auto hover:translate-y-1 transition-all">
+    <div className="absolute inset-0 bg-[#00ffa3] blur-xl opacity-70 rounded-full z-0 w-full h-full" />
+
+    <Link
+      href="/"
+      className="font-Orbitron relative z-10 px-3 sm:px-8 py-2 text-white text-lg sm:text-xl font-normal rounded-full bg-transparent border-none cursor-pointer hover:translate-y-1 transition-all"
+    >
+      Connect with us!
+    </Link>
+  </div>
+</div>
+
   <div className="flex flex-col justify-center items-center gap-5 my-10 inconsolata">
 
    <h2 className=' font-medium font-Orbitron flex flex-col'>
