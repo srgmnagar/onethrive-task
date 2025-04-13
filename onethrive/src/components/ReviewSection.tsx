@@ -82,8 +82,8 @@ const ReviewsSection: React.FC = () => {
       ));
 
   return (
-    <div className="start w-[80%] max-w-6xl py-20 mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="start sm:w-[65%] w-[85%] lg:w-[80%] max-w-6xl py-20 mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="relative p-5 md:p-8 rounded-3xl bg-[#0a1025] backdrop-blur-sm z-10 overflow-hidden border border-[#00ffa3]/20">
           <div className="absolute -inset-[1px] bg-gradient-to-tr from-[#00ffa3] via-transparent to-[#00ffa3] opacity-30 blur-xl animate-pulse rounded-3xl z-0" />
           <div className="relative z-10">
@@ -98,7 +98,7 @@ const ReviewsSection: React.FC = () => {
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <div className="flex flex-col justify-between font-Exo">
-                <p className="text-gray-300 mb-4 leading-relaxed">
+                <p className="text-gray-300 mb-4 leading-relaxed text-center">
                   {candidateReviews[candidateIndex].text}
                 </p>
                 <div className="flex justify-center mt-4">
@@ -115,10 +115,10 @@ const ReviewsSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative p-5 md:p-8 rounded-3xl bg-[#0a1025] backdrop-blur-sm z-10 overflow-hidden border border-[#a67bd4]/20">
-          <div className="absolute -inset-[1px] bg-gradient-to-tr from-[#a67bd4] via-transparent to-[#a67bd4] opacity-30 blur-xl animate-pulse rounded-3xl z-0" />
+        <div className="relative p-5 md:p-8 rounded-3xl bg-[#0a1025] backdrop-blur-sm z-10 overflow-hidden border border-[#00ffa3]/20">
+          <div className="absolute -inset-[1px] bg-gradient-to-tr from-[#00ffa3] via-transparent to-[#00ffa3] opacity-30 blur-xl animate-pulse rounded-3xl z-0" />
           <div className="relative z-10">
-            <h2 className="text-3xl font-Exo text-white mb-6 text-center hover:text-[#a67bd4] transition-all ease-in duration-200 hover:translate-x-1">
+            <h2 className="text-3xl font-Exo text-white mb-6 text-center hover:text-[#00ffa3] transition-all ease-in duration-200 hover:translate-x-1">
               Employee reviews
             </h2>
             <div className="flex items-center">
@@ -129,7 +129,7 @@ const ReviewsSection: React.FC = () => {
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <div className="flex-1 min-h-[200px]">
-                <p className="text-gray-300 font-Exo mb-4 leading-relaxed">
+                <p className="text-gray-300 font-Exo mb-4 leading-relaxed text-center">
                   {recruiterReviews[recruiterIndex].text}
                 </p>
                 <div className="flex justify-center mt-4">

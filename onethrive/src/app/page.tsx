@@ -1,5 +1,5 @@
 "use client";
-
+import { CalendarDays, Gift, MapPin, Menu, Users, X } from "lucide-react"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -7,107 +7,150 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { CalendarDays, Users, MapPin, Gift, Phone, Menu } from "lucide-react";
 import Link from "next/link";
 import ReviewsSection from "@/components/ReviewSection";
+import { useState } from "react";
 
 
 export default function Home() {
-
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   return (
     <div>
       <div className=" h-screen inconsolata bg-[linear-gradient(to_bottom,_rgba(0,_0,_0,_0)_10%,_rgba(0,_255,_162,_0)_30%,_rgba(0,_255,_162,_0.66)_90%)]">
        
         <div className="relative h-full">
-          <header className="border-b border-white/10 relative z-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex items-center justify-between h-16">
-                <div className="flex items-center">
-                  <Link
-                    href="/"
-                    className="flex items-center space-x-2 hover:translate-x-1 transition-all ease-in duration-200"
-                  >
-                    <CalendarDays className="h-8 w-8 text-[#00ffa3]" />
-                    <span className="text-3xl hover:text-[#00ffa3] transition-all ease-in duration-200 font-bold text-white">
-                      OneThrive
-                    </span>
-                  </Link>
-                </div>
+        <header className="border-b border-white/10 relative z-20 bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          
+          <Link
+            href="/"
+            className="flex items-center space-x-2 hover:translate-x-1 transition-all ease-in duration-200"
+          >
+            <CalendarDays className="h-8 w-8 text-[#00ffa3]" />
+            <span className="text-3xl hover:text-[#00ffa3] transition-all ease-in duration-200 font-bold text-white">
+              OneThrive
+            </span>
+          </Link>
 
-                <NavigationMenu className="hidden md:block">
-                  <NavigationMenuList className="space-x-2">
-                    <NavigationMenuItem>
-                      <NavigationMenuTrigger className="bg-transparent text-white hover:bg-[#00ffa3]/10 hover:text-[#00ffa3]">
-                        <span className="flex items-center text-xl">
-                          <CalendarDays className="w-4 h-4 mr-2" />
-                          Events
-                        </span>
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent>
-                        <div className="grid gap-3 p-6 w-[400px] bg-black">
-                          <div className="grid grid-cols-2 gap-4">
-                            <Link
-                              href="/corporate"
-                              className="group block space-y-2 p-3 rounded-lg hover:bg-[#00ffa3]/10"
-                            >
-                              <div className="flex items-center text-[#00ffa3]">
-                                <Users className="w-4 h-4 mr-2" />
-                                <h3 className="font-medium">Corporate Events</h3>
-                              </div>
-                              <p className="text-sm text-gray-400">
-                                Conferences, seminars, and team building events
-                              </p>
-                            </Link>
-                            <Link
-                              href="/social"
-                              className="group block space-y-2 p-3 rounded-lg hover:bg-[#00ffa3]/10"
-                            >
-                              <div className="flex items-center text-[#00ffa3]">
-                                <Gift className="w-4 h-4 mr-2" />
-                                <h3 className="font-medium text-xl">Social Events</h3>
-                              </div>
-                              <p className="text-sm text-gray-400">
-                                Weddings, parties, and celebrations
-                              </p>
-                            </Link>
-                          </div>
+          <NavigationMenu className="hidden md:block">
+            <NavigationMenuList className="space-x-2">
+              
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-[#00ffa3]/10 hover:text-[#00ffa3]">
+                  <span className="flex items-center text-xl">
+                    <CalendarDays className="w-4 h-4 mr-2" />
+                    Events
+                  </span>
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid gap-3 p-6 w-[400px] bg-black">
+                    <div className="grid grid-cols-2 gap-4">
+                      <Link
+                        href="/corporate"
+                        className="group block space-y-2 p-3 rounded-lg hover:bg-[#00ffa3]/10"
+                      >
+                        <div className="flex items-center text-[#00ffa3]">
+                          <Users className="w-4 h-4 mr-2" />
+                          <h3 className="font-medium">Corporate Events</h3>
                         </div>
-                      </NavigationMenuContent>
-                    </NavigationMenuItem>
+                        <p className="text-sm text-gray-400">
+                          Conferences, seminars, and team building events
+                        </p>
+                      </Link>
+                      <Link
+                        href="/social"
+                        className="group block space-y-2 p-3 rounded-lg hover:bg-[#00ffa3]/10"
+                      >
+                        <div className="flex items-center text-[#00ffa3]">
+                          <Gift className="w-4 h-4 mr-2" />
+                          <h3 className="font-medium text-xl">Social Events</h3>
+                        </div>
+                        <p className="text-sm text-gray-400">
+                          Weddings, parties, and celebrations
+                        </p>
+                      </Link>
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-                    <NavigationMenuItem>
-                      <NavigationMenuTrigger className="bg-transparent text-white hover:bg-[#00ffa3]/10 hover:text-[#00ffa3]">
-                        <span className="flex items-center text-xl">
-                          <MapPin className="w-4 h-4 mr-2" />
-                          Venues
-                        </span>
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent>
-                        <div className="grid gap-3 p-6 w-[400px] bg-black">
-                          <div className="space-y-4">
-                            <Link
-                              href="/indoor"
-                              className="block p-3 rounded-lg hover:bg-[#00ffa3]/10"
-                            >
-                              <h3 className="font-medium text-[#00ffa3]">Indoor Venues</h3>
-                              <p className="text-sm text-gray-400">Elegant halls and modern spaces</p>
-                            </Link>
-                            <Link
-                              href="/outdoor"
-                              className="block p-3 rounded-lg hover:bg-[#00ffa3]/10"
-                            >
-                              <h3 className="font-medium text-[#00ffa3]">Outdoor Venues</h3>
-                              <p className="text-sm text-gray-400">Gardens, beaches, and scenic locations</p>
-                            </Link>
-                          </div>
-                        </div>
-                      </NavigationMenuContent>
-                    </NavigationMenuItem>
-                  </NavigationMenuList>
-                </NavigationMenu>
-              </div>
-            </div>
-          </header>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-[#00ffa3]/10 hover:text-[#00ffa3]">
+                  <span className="flex items-center text-xl">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Venues
+                  </span>
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid gap-3 p-6 w-[400px] bg-black">
+                    <div className="space-y-4">
+                      <Link
+                        href="/indoor"
+                        className="block p-3 rounded-lg hover:bg-[#00ffa3]/10"
+                      >
+                        <h3 className="font-medium text-[#00ffa3]">Indoor Venues</h3>
+                        <p className="text-sm text-gray-400">Elegant halls and modern spaces</p>
+                      </Link>
+                      <Link
+                        href="/outdoor"
+                        className="block p-3 rounded-lg hover:bg-[#00ffa3]/10"
+                      >
+                        <h3 className="font-medium text-[#00ffa3]">Outdoor Venues</h3>
+                        <p className="text-sm text-gray-400">Gardens, beaches, and scenic locations</p>
+                      </Link>
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden text-white"
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden px-4 pb-4">
+          <div className="space-y-2 mt-2">
+            <Link
+              href="/corporate"
+              className="block py-2 px-4 rounded-md bg-[#00ffa3]/10 text-white"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Corporate Events
+            </Link>
+            <Link
+              href="/social"
+              className="block py-2 px-4 rounded-md bg-[#00ffa3]/10 text-white"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Social Events
+            </Link>
+            <Link
+              href="/indoor"
+              className="block py-2 px-4 rounded-md bg-[#00ffa3]/10 text-white"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Indoor Venues
+            </Link>
+            <Link
+              href="/outdoor"
+              className="block py-2 px-4 rounded-md bg-[#00ffa3]/10 text-white"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Outdoor Venues
+            </Link>
+          </div>
+        </div>
+      )}
+    </header>
 
           <main className="mx-auto pt-12">
             <div className="px-4 sm:px-6 lg:px-8 text-center flex flex-col justify-center gap-5 font-Sora">
@@ -149,7 +192,7 @@ export default function Home() {
     lineHeight: "1.8",
     boxShadow: "0 0 44px 0px #00ffa3", 
   }}
-  className="start relative inconsolata w-[85%] sm:w-[80%] sm:px-24 sm:pt-16 px-12 pt-7 mx-auto mt-16 rounded-3xl text-white inter sm:text-2xl text-lg font-extralight border border-[#00ffa3] shadow-[0_0_25px_#00ffa3]/40 transition-all duration-300"
+  className="start relative inconsolata w-[75%] sm:w-[80%] sm:px-24 sm:pt-16 px-12 pt-7 mx-auto mt-16 rounded-3xl text-white inter sm:text-2xl text-xs font-extralight border border-[#00ffa3] shadow-[0_0_25px_#00ffa3]/40 transition-all duration-300 text-center"
 >
   <div>
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi unde et doloribus totam fuga obcaecati Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores similique ullam harum ab, saepe itaque quo repudiandae quasi omnis voluptatibus, architecto dolor aliquam iure vitae mollitia numquam totam voluptatem corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio impedit quasi deleniti nulla alias voluptatibus!
@@ -160,7 +203,7 @@ export default function Home() {
 
     <Link
       href="/"
-      className="font-Orbitron relative z-10 px-3 sm:px-8 py-2 text-white text-lg sm:text-xl font-normal rounded-full bg-transparent border-none cursor-pointer hover:translate-y-1 transition-all"
+      className="font-Orbitron relative z-10 px-3 sm:px-8 py-2 text-white text-md sm:text-xl font-normal rounded-full bg-transparent border-none cursor-pointer hover:translate-y-1 transition-all"
     >
       Connect with us!
     </Link>
@@ -169,11 +212,12 @@ export default function Home() {
 
   <div className="flex flex-col justify-center items-center gap-5 my-10 inconsolata">
 
-   <h2 className=' font-medium font-Orbitron flex flex-col'>
-                    <span className='bg-gradient-to-r xl:text-4xl md:text-8xl text-xl from-[#ffffff] to-[#00ffa3] text-transparent bg-clip-text'>
-                        Why Us?
-                    </span>
-                </h2>
+  <h2 className='font-medium pb-5 flex flex-col'>
+  <span className='bg-gradient-to-r xl:text-6xl sm:text-5xl text-4xl from-[#ffffff] to-[#00ffa3] text-transparent bg-clip-text'>
+    Why Us?
+  </span>
+</h2>
+
                 <div
                     
                     className='bg-gradient-to-r from-[#8bffd4] to-[#00ffa3] text-black font-Exo w-full  py-10 flex justify-evenly '>
