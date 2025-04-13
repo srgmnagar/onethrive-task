@@ -1,7 +1,94 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+  --font-sora: 'Sora', sans-serif;
+  --font-instrument-serif: 'Instrument Serif', serif;
+  --font-geist-sans: 'Inter', sans-serif;
+  --font-geist-mono: 'Inconsolata', monospace;
+  --font-geist-serif: 'Instrument Serif', serif;
+  --font-geist-poppins: 'Poppins';
+}
+.poppins-font{
+  font-family: var(--font-geist-poppins);
+}
+.inter {
+  font-family: var(--font-geist-sans);
+}
+
+.font-instrument {
+  font-family: var(--font-instrument-serif);
+}
+
+.inconsolata {
+  font-family: var(--font-geist-mono);
+}
+
+.font-Sora{
+  font-family: var(--font-sora);
+}
+.scroll-h::-webkit-scrollbar {
+  display: none;
+}
+.scroll-h {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+
+
+
+@keyframes appear {
+  from {
+      opacity: 0;
+      transform: translateY(15px) ;
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0) ;
+  }
+}
+
+.head1 {
+  animation: appear 0.3s linear forwards;
+}
+.head2 {
+  animation: appear 0.4s linear forwards;
+}
+.head3{
+  animation: appear 0.5s linear forwards;
+}
+.head4{
+  animation: appear 0.6s linear forwards;
+}
+
+@keyframes appear {
+  from {
+      opacity: 0;
+      transform: translateY(200px) scale(0.3);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0px) scale(1);
+  }
+}
+
+.start {
+  
+  animation: appear both; 
+  animation-timeline: view(90% 10%);
+
+}
+
+
+
+
+
+
 
 @theme inline {
   --color-background: var(--background);
