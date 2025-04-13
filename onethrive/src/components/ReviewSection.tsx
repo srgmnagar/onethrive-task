@@ -46,35 +46,31 @@ const recruiterReviews: Review[] = [
 ];
 
 const ReviewsSection: React.FC = () => {
-  const [currentCandidateReview, setCurrentCandidateReview] = useState(0);
-  const [currentRecruiterReview, setCurrentRecruiterReview] = useState(0);
+  const [candidateIndex, setCandidateIndex] = useState(0);
+  const [recruiterIndex, setRecruiterIndex] = useState(0);
 
-  const nextCandidateReview = () => {
-    setCurrentCandidateReview((prev) =>
-      prev === candidateReviews.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevCandidateReview = () => {
-    setCurrentCandidateReview((prev) =>
+  const handleCandidatePrev = () =>
+    setCandidateIndex((prev) =>
       prev === 0 ? candidateReviews.length - 1 : prev - 1
     );
-  };
 
-  const nextRecruiterReview = () => {
-    setCurrentRecruiterReview((prev) =>
-      prev === recruiterReviews.length - 1 ? 0 : prev + 1
+  const handleCandidateNext = () =>
+    setCandidateIndex((prev) =>
+      prev === candidateReviews.length - 1 ? 0 : prev + 1
     );
-  };
 
-  const prevRecruiterReview = () => {
-    setCurrentRecruiterReview((prev) =>
+  const handleRecruiterPrev = () =>
+    setRecruiterIndex((prev) =>
       prev === 0 ? recruiterReviews.length - 1 : prev - 1
     );
-  };
 
-  const renderStars = (rating: number) => {
-    return Array(5)
+  const handleRecruiterNext = () =>
+    setRecruiterIndex((prev) =>
+      prev === recruiterReviews.length - 1 ? 0 : prev + 1
+    );
+
+  const renderStars = (rating: number) =>
+    Array(5)
       .fill(0)
       .map((_, i) => (
         <Star
@@ -84,12 +80,10 @@ const ReviewsSection: React.FC = () => {
           }`}
         />
       ));
-  };
 
   return (
     <div className="start w-[80%] max-w-6xl py-20 mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Company Reviews */}
         <div className="relative p-5 md:p-8 rounded-3xl bg-[#0a1025] backdrop-blur-sm z-10 overflow-hidden border border-[#00ffa3]/20">
           <div className="absolute -inset-[1px] bg-gradient-to-tr from-[#00ffa3] via-transparent to-[#00ffa3] opacity-30 blur-xl animate-pulse rounded-3xl z-0" />
           <div className="relative z-10">
@@ -98,24 +92,22 @@ const ReviewsSection: React.FC = () => {
             </h2>
             <div className="flex items-center">
               <button
-                onClick={prevCandidateReview}
+                onClick={handleCandidatePrev}
                 className="p-2 text-[#4A9BD4] hover:text-white transition-colors"
-                aria-label="Previous review"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <div className="flex flex-col justify-between font-Exo">
                 <p className="text-gray-300 mb-4 leading-relaxed">
-                  {candidateReviews[currentCandidateReview].text}
+                  {candidateReviews[candidateIndex].text}
                 </p>
                 <div className="flex justify-center mt-4">
-                  {renderStars(candidateReviews[currentCandidateReview].rating)}
+                  {renderStars(candidateReviews[candidateIndex].rating)}
                 </div>
               </div>
               <button
-                onClick={nextCandidateReview}
+                onClick={handleCandidateNext}
                 className="p-2 text-[#4A9BD4] hover:text-white transition-colors"
-                aria-label="Next review"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -123,7 +115,6 @@ const ReviewsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Employee Reviews */}
         <div className="relative p-5 md:p-8 rounded-3xl bg-[#0a1025] backdrop-blur-sm z-10 overflow-hidden border border-[#a67bd4]/20">
           <div className="absolute -inset-[1px] bg-gradient-to-tr from-[#a67bd4] via-transparent to-[#a67bd4] opacity-30 blur-xl animate-pulse rounded-3xl z-0" />
           <div className="relative z-10">
@@ -132,24 +123,22 @@ const ReviewsSection: React.FC = () => {
             </h2>
             <div className="flex items-center">
               <button
-                onClick={prevRecruiterReview}
+                onClick={handleRecruiterPrev}
                 className="p-2 text-[#a67bd4] hover:text-white transition-colors"
-                aria-label="Previous review"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <div className="flex-1 min-h-[200px]">
                 <p className="text-gray-300 font-Exo mb-4 leading-relaxed">
-                  {recruiterReviews[currentRecruiterReview].text}
+                  {recruiterReviews[recruiterIndex].text}
                 </p>
                 <div className="flex justify-center mt-4">
-                  {renderStars(recruiterReviews[currentRecruiterReview].rating)}
+                  {renderStars(recruiterReviews[recruiterIndex].rating)}
                 </div>
               </div>
               <button
-                onClick={nextRecruiterReview}
+                onClick={handleRecruiterNext}
                 className="p-2 text-[#a67bd4] hover:text-white transition-colors"
-                aria-label="Next review"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
