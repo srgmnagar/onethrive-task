@@ -146,10 +146,10 @@ export default function Home() {
           </main>
         </div>
       </div>
-      <div className=" start flex flex-col gap-5">
+      <div className=" flex flex-col gap-5">
   <div
     style={{ lineHeight: "1.8" }}
-    className="relative inconsolata w-[85%] sm:w-[80%] sm:px-24 sm:pt-16 px-12 pt-7 mx-auto  rounded-3xl text-white inter sm:text-2xl text-lg font-extralight border border-[#00ffa3]"
+    className="start relative inconsolata w-[85%] sm:w-[80%] sm:px-24 sm:pt-16 px-12 pt-7 mx-auto mt-16 rounded-3xl text-white inter sm:text-2xl text-lg font-extralight border border-[#00ffa3]"
   >
     <div>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi unde et doloribus totam fuga obcaecati Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores similique ullam harum ab, saepe itaque quo repudiandae quasi omnis voluptatibus, architecto dolor aliquam iure vitae mollitia numquam totam voluptatem corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio impedit quasi deleniti nulla alias voluptatibus!
@@ -163,7 +163,7 @@ export default function Home() {
         href="/"
         className="font-Orbitron relative z-10 px-3 sm:px-8 py-2 text-white text-lg sm:text-xl font-normal rounded-full bg-transparent border-none cursor-pointer hover:translate-y-1 transition-all"
       >
-        Lorem, ipsum.
+        Connect with us!
       </Link>
     </div>
   </div>
